@@ -17,23 +17,11 @@ def receive_pdf():
         return jsonify({"error": "No file part"}), 400
     
     file = request.files['file']
-    
-    # if file.filename == '':
-    #     return jsonify({"error": "No file selected"}), 400
 
-    
-    # if file.filename.endswith('.pdf'):
-    #     filename = file.filename
-        
-
-    #     filepath = os.getcwd()+"\\" + filename
-    #     file.save(filepath)
         
     pdf = Parse()
     info = pdf.parsePDF(file)
-    
-    # if os.path.isfile(filepath):
-    #     os.remove(filepath)
+
     
 
     
